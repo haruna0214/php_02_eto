@@ -1,11 +1,14 @@
 <?php
+// h化関数定義
 function h( $str ) {
     return htmlspecialchars($str, ENT_QUOTES, "UTF-8");
 }
+// 干支を計算するための関数の定義
 function eto( $year ) {
     $etos = ["子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥"];
     return $etos[($year - 4) % 12];
 }
+// 入力値取得
 $year = filter_input(INPUT_GET, "year", FILTER_VALIDATE_INT);
 ?>
 <!-- プログラムの読みやすさを重視して、headタグとbodyタグを省略 -->
